@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CoinProvider>
-          <div className="bg-[#0e0d12] max-w-[400px] mx-auto min-h-screen">
+          <div className="bg-[#0F0E15] max-w-[425px] mx-auto min-h-screen">
             {children}
           </div>
         </CoinProvider>

@@ -9,21 +9,21 @@ export default function Daily() {
   const calculatorCards = [
     {
       id: 1,
-      image: "/routine_image.webp",
+      image: "/routine_image.svg",
       title: "Daily Free Rbx",
       subtitle: "Calculator",
       href: "/daily-free-rbx"
     },
     {
       id: 2,
-      image: "/rbx_image.webp",
+      image: "/rbx_image.svg",
       title: "RBX To Dollar",
       subtitle: "Calculator",
       href: "/rbx-to-dollar"
     },
     {
       id: 3,
-      image: "/dollar_image.webp",
+      image: "/dollar_image.svg",
       title: "Dollar To RBX",
       subtitle: "Calculator",
       href: "/dollar-to-rbx"
@@ -37,12 +37,13 @@ export default function Daily() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.webp" 
+              src="/back.svg" 
               alt="Back" 
               width={40} 
               height={40}
               className="w-full h-auto brightness-110 contrast-110 saturate-110"
               unoptimized
+              priority
             />
           </div>
           <h1 className="text-2xl font-bold text-white">Daily R$ Converter</h1>
@@ -50,7 +51,7 @@ export default function Daily() {
 
         {/* Three Calculator Cards Grid */}
         <div className="grid grid-cols-2 gap-4 mb-6">
-          {calculatorCards.map((card) => (
+          {calculatorCards.map((card, i) => (
             <Link key={card.id} href={card.href}>
               <div className="">
                 {/* Card Image */}
@@ -63,6 +64,7 @@ export default function Daily() {
                     className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
                     quality={100}
                     unoptimized
+                    priority={i < 2}
                   />
                 
                 </div>

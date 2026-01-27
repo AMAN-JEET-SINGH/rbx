@@ -1,13 +1,18 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+function ShareIcon({ className }: { className?: string }) {
+  return (
+    <Image src="/share.svg" alt="Share" width={20} height={20} className="w-full h-auto brightness-110 contrast-110 saturate-110" unoptimized priority />
+  );
+}
+
 export default function Meme() {
   const router = useRouter();
-  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [copiedId, setCopiedId] = useState<number | null>(null);
 
   const memes = [
     {
@@ -72,13 +77,11 @@ export default function Meme() {
     }
   ];
 
-  const handleCopy = async (text: string, index: number) => {
+  const handleCardClick = async (text: string, id: number) => {
     try {
       await navigator.clipboard.writeText(text);
-      setCopiedIndex(index);
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
     } catch (err) {
       console.error('Failed to copy text:', err);
     }
@@ -91,12 +94,13 @@ export default function Meme() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.webp" 
+              src="/back.svg" 
               alt="Back" 
               width={40} 
               height={40}
               className="w-full h-auto brightness-110 contrast-110 saturate-110"
               unoptimized
+              priority
             />
           </div>
           <h1 className="text-2xl font-bold text-white">Memes For Fun</h1>
@@ -107,25 +111,23 @@ export default function Meme() {
           {memes.map((meme) => (
             <div
               key={meme.id}
-              className="bg-[#1a1a1f] rounded-xl p-4 flex items-start justify-between gap-3"
+              onClick={() => handleCardClick(meme.text, meme.id)}
+              className="bg-[#2a2a2a] rounded-xl p-5 flex items-center gap-4 cursor-pointer hover:opacity-95 transition-opacity"
             >
-              {/* Meme Content */}
-              <div className="flex-1">
-                <h3 className="text-gray-300 font-semibold text-sm mb-2">{meme.title}</h3>
-                <p className="text-white text-sm">{meme.description}</p>
+              {/* Title + Description (left) */}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-white font-bold text-xl mb-1">{meme.title}</h3>
+                <p className="text-white text-base">{meme.description}</p>
               </div>
 
-              {/* Copy Button */}
-              <button
-                onClick={() => handleCopy(meme.text, meme.id)}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors flex-shrink-0 ${
-                  copiedIndex === meme.id
-                    ? 'bg-green-600 text-white'
-                    : 'bg-orange-500 hover:bg-orange-600 text-white'
-                }`}
-              >
-                {copiedIndex === meme.id ? 'Copied!' : 'Copy'}
-              </button>
+              {/* Share icon (right) – in rounded square; shows check when copied */}
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                {copiedId === meme.id ? (
+                  <span className="text-green-400 text-xl">✓</span>
+                ) : (
+                  <ShareIcon />
+                )}
+              </div>
             </div>
           ))}
         </div>

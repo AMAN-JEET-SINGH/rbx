@@ -3,12 +3,15 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-3 px-5 sm:items-start">
+      <main
+        className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-3 px-5 sm:items-start bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/intro-bg.webp')" }}
+      >
         <div className="flex flex-col items-center w-full">
           <div className="flex items-center justify-center w-full">
             <div className="w-full h-full">
               <a href="\home">
-                <Image src="/starting.webp" alt="RBX Counter" width={1000} height={1000} className="w-full h-full object-cover" />
+                <Image src="/intro.webp" alt="RBX Counter" width={1000} height={1000} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1000px" />
               </a>
             </div>
           </div>

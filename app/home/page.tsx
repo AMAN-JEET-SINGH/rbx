@@ -36,7 +36,7 @@ export default function Home() {
                   width={38} 
                   height={38}
                   className="brightness-110 contrast-110 saturate-110"
-                  unoptimized
+                  priority
                 />
                 <div className="text-md font-bold text-white">{coins}</div>
               </div>
@@ -81,10 +81,10 @@ export default function Home() {
           </div>
 
       </div>
-      <div className="text-white text-center text-sm mt-1">
+      <div className="text-white text-center text-sm mt-5">
         <Link href="/daily">
         <Image 
-          src="/daily.webp" 
+          src="/daily.svg" 
           alt="Image" 
           width={400} 
           height={400}
@@ -92,18 +92,19 @@ export default function Home() {
           quality={100}
           unoptimized
           priority
+          sizes="(max-width: 425px) 100vw, 400px"
         />
         </Link>
       </div>
 
       {/* Four Cards Grid */}
-      <div className="w-full max-w-md px-4 mt-4">
+      <div className="w-full max-w-md px-1 mt-4">
         <div className="grid grid-cols-2 gap-3">
           {/* Card 1: Get Daily RBX */}
           <div className="relative overflow-hidden rounded-xl">
           <Link href="/clothes">
             <Image 
-              src="/getDaily.webp" 
+              src="/getDaily.svg" 
               alt="Daily RBX" 
               width={300} 
               height={300}
@@ -111,6 +112,7 @@ export default function Home() {
               quality={100}
               unoptimized
               priority
+              sizes="(max-width: 425px) 50vw, 150px"
             />
             </Link>
           </div>
@@ -119,7 +121,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
             <Link href="/spinner">
             <Image 
-              src="/spinner.webp" 
+              src="/spinner.svg" 
               alt="Spin Wheel" 
               width={300} 
               height={300}
@@ -127,6 +129,7 @@ export default function Home() {
               quality={100}
               unoptimized
               priority
+              sizes="(max-width: 425px) 50vw, 150px"
             />
             </Link>
           </div>
@@ -135,7 +138,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
             <Link href="/scratch">
             <Image 
-              src="/scratch.webp" 
+              src="/scratch.svg" 
               alt="Scratch and Win" 
               width={300} 
               height={300}
@@ -143,6 +146,7 @@ export default function Home() {
               quality={100}
               unoptimized
               priority
+              sizes="(max-width: 425px) 50vw, 150px"
             />
             </Link>
           </div>
@@ -151,7 +155,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
             <Link href="/memes">
             <Image 
-              src="/meme.webp" 
+              src="/meme.svg" 
               alt="Memes For Fun" 
               width={300} 
               height={300}
@@ -166,18 +170,19 @@ export default function Home() {
       </div>
 
       {/* Two List Items Below Grid */}
-      <div className="w-full max-w-md px-4 mt-4 space-y-3">
+      <div className="w-full max-w-md px-1 mt-4 space-y-3">
         {/* RBX TO Dollar */}
         <div className="relative overflow-hidden rounded-xl">
           <Link href="/rbx-to-dollar">
           <Image 
-            src="/rd_main.webp" 
+            src="/rd_main.svg" 
             alt="RBX TO Dollar" 
-            width={400} 
-            height={100}
+            width={500} 
+            height={300}
             className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
             quality={100}
             unoptimized
+            priority
           />
           </Link>
         </div>
@@ -186,13 +191,14 @@ export default function Home() {
         <div className="relative overflow-hidden rounded-xl">
           <Link href="/dollar-to-rbx">
           <Image 
-            src="/dr_main.webp" 
+            src="/dr_main.svg" 
             alt="Dollar To RBX" 
             width={400} 
             height={100}
             className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
             quality={100}
             unoptimized
+            priority
           />
           </Link>
         </div>

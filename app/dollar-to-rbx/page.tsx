@@ -63,28 +63,30 @@ export default function DollarToRbx() {
           <div className="flex items-center gap-4 mb-6 mt-4">
             <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
               <Image 
-                src="/back.webp" 
+                src="/back.svg" 
                 alt="Back" 
                 width={40} 
                 height={40}
                 className="w-full h-auto brightness-110 contrast-110 saturate-110"
                 unoptimized
+                priority
               />
             </div>
             <h1 className="text-2xl font-bold text-white">Dollar To RBX Calculator</h1>
           </div>
 
           {/* Main Graphic */}
-          <div className="mb-6">
+          <div className="mb-6 flex justify-center">
             <Image 
-              src="/all_calimage.webp" 
+              src="/charactergrp.svg" 
               alt="Dollar To RBX" 
-              width={400} 
-              height={400}
-              className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
+              width={220} 
+              height={220}
+              className="max-h-[200px] w-auto object-contain brightness-110 contrast-110 saturate-110"
               quality={100}
               unoptimized
               priority
+              sizes="(max-width: 425px) 220px, 220px"
             />
           </div>
 
@@ -105,17 +107,17 @@ export default function DollarToRbx() {
                 setDollar(e.target.value);
                 setShowResult(false);
               }}
-              className="w-full px-4 py-3 rounded-lg bg-[#1a1a1f] border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+              className="w-full px-6 py-4 rounded-2xl bg-[#1a1a1f] border border-gray-300 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
               min="0"
               step="0.01"
             />
           </div>
 
           {/* Count Now Button */}
-          <div className="mb-6 relative overflow-hidden rounded-lg">
+          <div className="mb-6 relative overflow-hidden rounded-2xl">
             <button
               onClick={handleCount}
-              className="w-full relative bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-lg transition-colors overflow-hidden"
+              className="w-full relative bg-gradient-to-b from-orange-400 to-orange-600 hover:opacity-95 text-white font-bold py-4 px-6 rounded-2xl transition-all overflow-hidden"
             >
               {/* Shine Effect */}
               <div className="absolute inset-0 shine-animation"></div>

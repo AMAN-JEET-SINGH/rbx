@@ -206,12 +206,13 @@ export default function Scratch() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.webp" 
+              src="/back.svg" 
               alt="Back" 
               width={40} 
               height={40}
               className="w-full h-auto brightness-110 contrast-110 saturate-110"
               unoptimized
+              priority
             />
           </div>
           <h1 className="text-2xl font-bold text-white">Scratch and Win</h1>
