@@ -35,6 +35,7 @@ export default function Anime() {
               height={40}
               className="w-full h-auto brightness-110 contrast-110 saturate-110"
               unoptimized
+              priority
             />
           </div>
           <h1 className="text-2xl font-bold text-white">Select Anime :</h1>

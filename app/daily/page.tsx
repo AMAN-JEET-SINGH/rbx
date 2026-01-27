@@ -65,6 +65,7 @@ export default function Daily() {
                     quality={100}
                     unoptimized
                     priority={i < 2}
+                    loading={i >= 2 ? "eager" : undefined}
                   />
                 
                 </div>

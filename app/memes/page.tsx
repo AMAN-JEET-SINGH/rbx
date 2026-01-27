@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 function ShareIcon({ className }: { className?: string }) {
   return (
-    <Image src="/share.svg" alt="Share" width={20} height={20} className="w-full h-auto brightness-110 contrast-110 saturate-110" unoptimized priority />
+    <Image src="/share.svg" alt="Share" width={20} height={20} className="w-full h-auto brightness-110 contrast-110 saturate-110" unoptimized loading="eager" />
   );
 }
 

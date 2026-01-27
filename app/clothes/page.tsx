@@ -27,6 +27,7 @@ export default function Clothes() {
               height={40}
               className="w-full h-auto brightness-110 contrast-110 saturate-110"
               unoptimized
+              priority
             />
           </div>
           <h1 className="text-2xl font-bold text-white">Select Clothes</h1>
@@ -46,6 +47,7 @@ export default function Clothes() {
                   quality={100}
                   unoptimized
                   priority={i < 2}
+                  loading={i < 2 ? undefined : "eager"}
                   sizes="(max-width: 425px) 50vw, 200px"
                 />
               </div>

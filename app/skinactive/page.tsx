@@ -49,6 +49,7 @@ function SkinActiveContent() {
               height={40}
               className="w-full h-auto brightness-110 contrast-110 saturate-110"
               unoptimized
+              priority
             />
           </div>
           <h1 className="text-2xl font-bold text-white">Rbux Skin</h1>
@@ -63,6 +64,7 @@ function SkinActiveContent() {
             height={280}
             className="w-full max-w-[280px] h-auto object-contain"
             unoptimized
+            priority
           />
         </div>
 
@@ -82,7 +84,10 @@ function SkinActiveContent() {
 
       <CongratsModal
         isOpen={showCongrats}
-        onClose={() => setShowCongrats(false)}
+        onClose={() => {
+          setShowCongrats(false);
+          router.push('/home');
+        }}
       />
     </div>
   );

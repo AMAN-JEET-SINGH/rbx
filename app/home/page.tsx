@@ -63,6 +63,7 @@ export default function Home() {
                         height={24}
                         className="brightness-110 contrast-110 saturate-110"
                         unoptimized
+                        priority
                       />
                     </div>
                     <span className="text-white font-sm font-bold text-base uppercase">EARN FREE COINS</span>
@@ -163,6 +164,7 @@ export default function Home() {
               quality={100}
               unoptimized
               priority
+              sizes="(max-width: 425px) 50vw, 150px"
             />
             </Link>
           </div>

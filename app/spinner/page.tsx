@@ -25,17 +25,17 @@ export default function SpinWheelPage() {
 
   // 8 segments: rbxlogo + number each (like the reference image)
   const prizes: Prize[] = [
-    { label: '200', value: 200 },
-    { label: '10', value: 10 },
     { label: '100', value: 100 },
-    { label: '20', value: 20 },
-    { label: '120', value: 120 },
-    { label: '30', value: 30 },
-    { label: '150', value: 150 },
+    { label: '5', value: 5 },
     { label: '50', value: 50 },
+    { label: '10', value: 10 },
+    { label: '60', value: 60 },
+    { label: '15', value: 15 },
+    { label: '75', value: 75 },
+    { label: '25', value: 25 },
   ];
 
-  const spinCost = 50;
+  const spinCost = 20;
   const anglePerPrize = 360 / prizes.length;
 
   // Helper: which prize is at the pointer (top)

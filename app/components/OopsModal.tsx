@@ -24,6 +24,7 @@ export default function OopsModal({ isOpen, onClose, onWatchAd }: OopsModalProps
             className="w-auto h-auto object-contain brightness-110 contrast-110 saturate-110"
             quality={85}
             sizes="200px"
+            loading="eager"
           />
         </div>
 

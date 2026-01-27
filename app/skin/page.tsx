@@ -97,6 +97,7 @@ export default function Skin() {
                   height={200}
                   className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
                   unoptimized
+                  loading="eager"
                   sizes="(max-width: 425px) 50vw, 200px"
                 />
               </div>
