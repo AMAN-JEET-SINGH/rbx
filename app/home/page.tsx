@@ -31,7 +31,7 @@ export default function Home() {
             <div className="flex items-center justify-center">
               <div className="flex justify-center items-center gap-2">
                 <Image 
-                  src="/coin-earn.png" 
+                  src="/image/coin-earn.avif" 
                   alt="Coin Earn" 
                   width={38} 
                   height={38}
@@ -57,7 +57,7 @@ export default function Home() {
                     {/* Coin Icon in Button */}
                     <div className="w-6 h-6 flex items-center justify-center">
                       <Image 
-                        src="/coin.png" 
+                        src="/image/coin.avif" 
                         alt="Coin Earn" 
                         width={24} 
                         height={24}
@@ -85,7 +85,7 @@ export default function Home() {
       <div className="text-white text-center text-sm mt-5">
         <Link href="/daily">
         <Image 
-          src="/daily.svg" 
+          src="/image/daily.avif" 
           alt="Image" 
           width={400} 
           height={400}
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
           <Link href="/clothes">
             <Image 
-              src="/getDaily.svg" 
+              src="/image/getDaily.avif" 
               alt="Daily RBX" 
               width={300} 
               height={300}
@@ -122,7 +122,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
             <Link href="/spinner">
             <Image 
-              src="/spinner.svg" 
+              src="/image/spinner.avif" 
               alt="Spin Wheel" 
               width={300} 
               height={300}
@@ -139,7 +139,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
             <Link href="/scratch">
             <Image 
-              src="/scratch.svg" 
+              src="/image/scratch.avif" 
               alt="Scratch and Win" 
               width={300} 
               height={300}
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl">
             <Link href="/memes">
             <Image 
-              src="/meme.svg" 
+              src="/image/meme.avif" 
               alt="Memes For Fun" 
               width={300} 
               height={300}
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="relative overflow-hidden rounded-xl">
           <Link href="/rbx-to-dollar">
           <Image 
-            src="/rd_main.svg" 
+            src="/image/rd_main.avif" 
             alt="RBX TO Dollar" 
             width={500} 
             height={300}
@@ -193,7 +193,7 @@ export default function Home() {
         <div className="relative overflow-hidden rounded-xl">
           <Link href="/dollar-to-rbx">
           <Image 
-            src="/dr_main.svg" 
+            src="/image/dr_main.avif" 
             alt="Dollar To RBX" 
             width={400} 
             height={100}

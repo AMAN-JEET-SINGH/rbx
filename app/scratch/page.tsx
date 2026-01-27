@@ -206,7 +206,7 @@ export default function Scratch() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.svg" 
+              src="/image/back.avif" 
               alt="Back" 
               width={40} 
               height={40}

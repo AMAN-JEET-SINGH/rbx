@@ -13,19 +13,19 @@ export default function DailyFreeRbx() {
   const counterCards = [
     {
       id: 1,
-      image: "/bc.svg",
+      image: "/image/bc.avif",
       title: "BC RBX Counter",
       href: "/bc-rbx-counter"
     },
     {
       id: 2,
-      image: "/tbc.svg",
+      image: "/image/tbc.avif",
       title: "TBC RBX Counter",
       href: "/tbc-rbx-counter"
     },
     {
       id: 3,
-      image: "/obc.svg",
+      image: "/image/obc.avif",
       title: "OBC RBX Counter",
       href: "/obc-rbx-counter"
     }
@@ -38,7 +38,7 @@ export default function DailyFreeRbx() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.svg" 
+              src="/image/back.avif" 
               alt="Back" 
               width={40} 
               height={40}

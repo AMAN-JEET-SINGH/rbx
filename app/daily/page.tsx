@@ -9,21 +9,21 @@ export default function Daily() {
   const calculatorCards = [
     {
       id: 1,
-      image: "/routine_image.svg",
+      image: "/image/routine_image.avif",
       title: "Daily Free Rbx",
       subtitle: "Calculator",
       href: "/daily-free-rbx"
     },
     {
       id: 2,
-      image: "/rbx_image.svg",
+      image: "/image/rbx_image.avif",
       title: "RBX To Dollar",
       subtitle: "Calculator",
       href: "/rbx-to-dollar"
     },
     {
       id: 3,
-      image: "/dollar_image.svg",
+      image: "/image/dollar_image.avif",
       title: "Dollar To RBX",
       subtitle: "Calculator",
       href: "/dollar-to-rbx"
@@ -37,7 +37,7 @@ export default function Daily() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.svg" 
+              src="/image/back.avif" 
               alt="Back" 
               width={40} 
               height={40}

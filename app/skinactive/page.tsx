@@ -6,16 +6,16 @@ import { useState, useMemo, Suspense } from "react";
 import CongratsModal from "../components/CongratsModal";
 
 const skinOptions: { id: number; image: string; alt: string }[] = [
-  { id: 1, image: "/skin1.svg", alt: "Skin 1" },
-  { id: 2, image: "/skin2.svg", alt: "Skin 2" },
-  { id: 3, image: "/skin3.svg", alt: "Skin 3" },
-  { id: 4, image: "/skin4.svg", alt: "Skin 4" },
-  { id: 5, image: "/skin5.svg", alt: "Skin 5" },
-  { id: 6, image: "/skin6.svg", alt: "Skin 6" },
-  { id: 7, image: "/skin7.svg", alt: "Skin 7" },
-  { id: 8, image: "/skin8.svg", alt: "Skin 8" },
-  { id: 9, image: "/skin9.svg", alt: "Skin 9" },
-  { id: 10, image: "/skin10.svg", alt: "Skin 10" },
+  { id: 1, image: "/image/skin1.avif", alt: "Skin 1" },
+  { id: 2, image: "/image/skin2.avif", alt: "Skin 2" },
+  { id: 3, image: "/image/skin3.avif", alt: "Skin 3" },
+  { id: 4, image: "/image/skin4.avif", alt: "Skin 4" },
+  { id: 5, image: "/image/skin5.avif", alt: "Skin 5" },
+  { id: 6, image: "/image/skin6.avif", alt: "Skin 6" },
+  { id: 7, image: "/image/skin7.avif", alt: "Skin 7" },
+  { id: 8, image: "/image/skin8.avif", alt: "Skin 8" },
+  { id: 9, image: "/image/skin9.avif", alt: "Skin 9" },
+  { id: 10, image: "/image/skin10.avif", alt: "Skin 10" },
 ];
 
 const DESCRIPTION =
@@ -43,7 +43,7 @@ function SkinActiveContent() {
             className="w-10 h-10 flex items-center justify-center cursor-pointer"
           >
             <Image
-              src="/back.svg"
+              src="/image/back.avif"
               alt="Back"
               width={40}
               height={40}

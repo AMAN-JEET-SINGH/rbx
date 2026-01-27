@@ -17,7 +17,7 @@ export default function OopsModal({ isOpen, onClose, onWatchAd }: OopsModalProps
         {/* OOPS Image */}
         <div className="flex justify-center mb-4">
           <Image 
-            src="/oops.png" 
+            src="/image/oops.avif" 
             alt="OOPS" 
             width={200} 
             height={100}

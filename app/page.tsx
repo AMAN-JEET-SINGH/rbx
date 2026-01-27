@@ -5,13 +5,13 @@ export default function Home() {
     <div className="flex min-h-screen items-center justify-center font-sans">
       <main
         className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-3 px-5 sm:items-start bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/intro-bg.webp')" }}
+        style={{ backgroundImage: "url('/image/intro-bg.avif')" }}
       >
         <div className="flex flex-col items-center w-full">
           <div className="flex items-center justify-center w-full">
             <div className="w-full h-full">
               <a href="\home">
-                <Image src="/intro.webp" alt="RBX Counter" width={1000} height={1000} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1000px" />
+                <Image src="/image/intro.avif" alt="RBX Counter" width={1000} height={1000} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1000px" />
               </a>
             </div>
           </div>

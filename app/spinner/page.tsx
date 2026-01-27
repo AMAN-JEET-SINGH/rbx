@@ -1,7 +1,7 @@
 'use client';
 /**
- * SPINNER ASSETS – copy into public/:
- *   wheel-base.svg, rbxlogo.svg, spin.svg
+ * SPINNER ASSETS – in public/image/:
+ *   wheel-base.avif, rbxlogo.avif, spin.avif
  */
 
 import Image from 'next/image';
@@ -111,7 +111,7 @@ export default function SpinWheelPage() {
             className="w-10 h-10 flex items-center justify-center cursor-pointer"
           >
             <Image
-              src="/back.svg"
+              src="/image/back.avif"
               alt="Back"
               width={40}
               height={40}
@@ -126,7 +126,7 @@ export default function SpinWheelPage() {
         {/* Coins & cost */}
         <div className="flex items-center justify-center gap-4 text-white mb-4">
           <div className="flex items-center gap-2 bg-[#2a2a2a] px-4 py-2 rounded-lg">
-            <Image src="/rbxlogo.svg" alt="Coins" width={20} height={20} className="w-5 h-5" unoptimized priority />
+            <Image src="/image/rbxlogo.avif" alt="Coins" width={20} height={20} className="w-5 h-5" unoptimized priority />
             <span className="font-bold">{coins.toLocaleString()}</span>
           </div>
           {/* <div className="text-sm">
@@ -167,7 +167,7 @@ export default function SpinWheelPage() {
               >
                 {/* Wheel base – copy wheel-base.svg into public/ */}
                 <Image
-                  src="/wheel-base.svg"
+                  src="/image/wheel-base.avif"
                   alt="Wheel Base"
                   fill
                   sizes="320px"
@@ -196,7 +196,7 @@ export default function SpinWheelPage() {
                       }}
                     >
                       <Image
-                        src="/rbxlogo.svg"
+                        src="/image/rbxlogo.avif"
                         alt=""
                         width={24}
                         height={24}
@@ -218,7 +218,7 @@ export default function SpinWheelPage() {
                 disabled={spinning || !hasEnoughCoins(spinCost)}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-[#FBD457] rounded-full border-4 border-yellow-400 flex items-center justify-center z-20 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-105"
               >
-                <Image src="/spin.svg" alt="Spin" width={56} height={56} className="w-14 h-14" unoptimized priority />
+                <Image src="/image/spin.avif" alt="Spin" width={56} height={56} className="w-14 h-14" unoptimized priority />
               </button>
             </div>
 

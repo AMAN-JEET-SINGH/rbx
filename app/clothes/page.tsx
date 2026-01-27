@@ -7,10 +7,10 @@ import { useRouter } from "next/navigation";
 export default function Clothes() {
   const router = useRouter();
   const clothingItems = [
-    { id: 1, image: "/cloth1.svg", alt: "Cloth 1" },
-    { id: 2, image: "/cloth2.svg", alt: "Cloth 2" },
-    { id: 3, image: "/cloth3.svg", alt: "Cloth 3" },
-    { id: 4, image: "/cloth4.svg", alt: "Cloth 4" },
+    { id: 1, image: "/image/cloth1.avif", alt: "Cloth 1" },
+    { id: 2, image: "/image/cloth2.avif", alt: "Cloth 2" },
+    { id: 3, image: "/image/cloth3.avif", alt: "Cloth 3" },
+    { id: 4, image: "/image/cloth4.avif", alt: "Cloth 4" },
     
   ];
 
@@ -21,7 +21,7 @@ export default function Clothes() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.svg" 
+              src="/image/back.avif" 
               alt="Back" 
               width={40} 
               height={40}

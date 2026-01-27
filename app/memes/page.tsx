@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 function ShareIcon({ className }: { className?: string }) {
   return (
-    <Image src="/share.svg" alt="Share" width={20} height={20} className="w-full h-auto brightness-110 contrast-110 saturate-110" unoptimized loading="eager" />
+    <Image src="/image/share.avif" alt="Share" width={20} height={20} className="w-full h-auto brightness-110 contrast-110 saturate-110" unoptimized loading="eager" />
   );
 }
 
@@ -94,7 +94,7 @@ export default function Meme() {
         <div className="flex items-center gap-4 mb-6 mt-4">
           <div onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center cursor-pointer">
             <Image 
-              src="/back.svg" 
+              src="/image/back.avif" 
               alt="Back" 
               width={40} 
               height={40}

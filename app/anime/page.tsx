@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-// Content: edit this array to add or change anime options. Image is always /anime.svg; use `name` for the label.
+// Content: edit this array to add or change anime options. Image is /image/anime.avif; use `name` for the label.
 const animeOptions = [
   { id: 1, name: "DJ Vibes" },
   { id: 2, name: "Urban Skater" },
@@ -29,7 +29,7 @@ export default function Anime() {
             className="w-10 h-10 flex items-center justify-center cursor-pointer"
           >
             <Image
-              src="/back.svg"
+              src="/image/back.avif"
               alt="Back"
               width={40}
               height={40}
@@ -47,7 +47,7 @@ export default function Anime() {
             <Link key={item.id} href="/skin">
               <div className="flex items-center gap-3 rounded-xl bg-[#1a1a1f] px-4 py-3 cursor-pointer hover:opacity-90 transition-opacity mt-3">
                 <Image
-                  src="/anime.svg"
+                  src="/image/anime.avif"
                   alt={item.name}
                   width={64}
                   height={64}
