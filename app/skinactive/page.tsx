@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import CongratsModal from "../components/CongratsModal";
 
 const skinOptions: { id: number; image: string; alt: string }[] = [
@@ -21,7 +21,7 @@ const skinOptions: { id: number; image: string; alt: string }[] = [
 const DESCRIPTION =
   'This Roblox avatar features a stylish look with a black hoodie branded with "ROBLOX" paired with ripped black jeans and trendy sneakers. The spiky black hairstyle with a red headband adds a bold touch. Perfect for casual yet cool gameplay, this character stands out with confidence and modern streetwear vibes.';
 
-export default function SkinActive() {
+function SkinActiveContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const idParam = searchParams.get("id");
@@ -85,5 +85,17 @@ export default function SkinActive() {
         onClose={() => setShowCongrats(false)}
       />
     </div>
+  );
+}
+
+export default function SkinActive() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-black p-4 flex items-center justify-center">
+        <div className="text-white/70">Loading...</div>
+      </div>
+    }>
+      <SkinActiveContent />
+    </Suspense>
   );
 }
