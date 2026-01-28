@@ -178,7 +178,6 @@ export default function DollarToRbx() {
       <AdModal
         isOpen={showAd}
         onClose={() => setShowAd(false)}
-        onComplete={handleAdComplete}
       />
     </>
   );
