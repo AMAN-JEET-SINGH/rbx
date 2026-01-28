@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { useCoins } from '../contexts/CoinContext';
+import AdGoogle from './AdGoogle';
 
 interface AdModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onComplete: () => void;
 }
 
-export default function AdModal({ isOpen, onClose, onComplete }: AdModalProps) {
+export default function AdModal({ isOpen, onClose }: AdModalProps) {
   const { addCoins } = useCoins();
   const [countdown, setCountdown] = useState(5);
   const [canSkip, setCanSkip] = useState(false);
@@ -39,7 +39,8 @@ export default function AdModal({ isOpen, onClose, onComplete }: AdModalProps) {
     if (canSkip) {
       // Add 10 coins when ad is watched
       addCoins(10);
-      onComplete();
+      // Save the current time as the last earn time
+      localStorage.setItem("lastEarnCoinsTime", new Date().toISOString());
       onClose();
     }
   };
@@ -50,18 +51,16 @@ export default function AdModal({ isOpen, onClose, onComplete }: AdModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90">
       <div className="relative bg-[#1a1a1a] rounded-lg p-8 max-w-md w-full mx-4">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Advertisement</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">Watch an Ad</h2>
           
-          {/* Ad Placeholder */}
-          <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg p-16 mb-6 flex items-center justify-center min-h-[300px]">
-            <div className="text-white text-center">
-              <div className="text-6xl mb-4">📺</div>
-              <p className="text-xl font-semibold">Ad Video Playing</p>
-              {!canSkip && (
-                <p className="text-sm mt-2">Please wait {countdown} seconds...</p>
-              )}
-            </div>
+          {/* Ad Component */}
+          <div className="mb-6 flex items-center justify-center">
+            <AdGoogle slotId="8724045973" size="large" />
           </div>
+
+          {!canSkip && (
+            <p className="text-sm text-gray-300 mb-4">Please watch the ad... Waiting {countdown} seconds...</p>
+          )}
 
           {/* Skip/Complete Button */}
           <button

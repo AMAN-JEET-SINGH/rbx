@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCoins } from '../contexts/CoinContext';
+import AdGoogle from '../components/AdGoogle';
 
 interface Prize {
   label: string;
@@ -237,6 +238,11 @@ export default function SpinWheelPage() {
               </p>
             )}
           </div>
+        </div>
+
+        {/* Ad Below Spin Button */}
+        <div className="mt-6">
+          <AdGoogle slotId="8724045973" size="large" />
         </div>
       </div>
     </div>

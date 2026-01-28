@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCoins } from "../contexts/CoinContext";
 import AdModal from "../components/AdModal";
 import AdGoogle from "../components/AdGoogle";
@@ -10,9 +10,32 @@ import AdGoogle from "../components/AdGoogle";
 export default function Home() {
   const { coins } = useCoins();
   const [showAd, setShowAd] = useState(false);
+  const [canEarn, setCanEarn] = useState(true);
+  const [nextEarnTime, setNextEarnTime] = useState<string>("");
+
+  useEffect(() => {
+    // Check if user can earn coins (24-hour cooldown)
+    const lastEarnTime = localStorage.getItem("lastEarnCoinsTime");
+    if (lastEarnTime) {
+      const lastTime = new Date(lastEarnTime).getTime();
+      const now = new Date().getTime();
+      const hoursPassed = (now - lastTime) / (1000 * 60 * 60);
+
+      if (hoursPassed < 24) {
+        setCanEarn(false);
+        const hoursRemaining = 24 - hoursPassed;
+        const nextTime = new Date(now + hoursRemaining * 60 * 60 * 1000);
+        setNextEarnTime(nextTime.toLocaleTimeString());
+      } else {
+        setCanEarn(true);
+      }
+    }
+  }, []);
 
   const handleEarnCoins = () => {
-    setShowAd(true);
+    if (canEarn) {
+      setShowAd(true);
+    }
   };
 
   const handleAdComplete = () => {
@@ -48,10 +71,13 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-lg">
                 <button 
                   onClick={handleEarnCoins}
-                  className="w-full relative py-3 px-1 rounded-3xl bg-[#7f3e31] flex items-center justify-center overflow-hidden"
+                  disabled={!canEarn}
+                  className={`w-full relative py-3 px-1 rounded-3xl flex items-center justify-center overflow-hidden transition-opacity ${
+                    canEarn ? 'bg-[#7f3e31]' : 'bg-gray-600 opacity-60 cursor-not-allowed'
+                  }`}
                 >
                   {/* Continuous Shine Effect */}
-                  <div className="absolute inset-0 shine-animation"></div>
+                  {canEarn && <div className="absolute inset-0 shine-animation"></div>}
                   
                   {/* Button Content */}
                   <div className="flex items-center gap-3 relative z-10">
@@ -67,7 +93,9 @@ export default function Home() {
                         priority
                       />
                     </div>
-                    <span className="text-white font-sm font-bold text-base uppercase">EARN FREE COINS</span>
+                    <span className="text-white font-sm font-bold text-base uppercase">
+                      {canEarn ? "EARN FREE COINS" : "Come back in 24h"}
+                    </span>
                   </div>
                 </button>
               </div>
@@ -209,8 +237,7 @@ export default function Home() {
       
       <AdModal 
         isOpen={showAd} 
-        onClose={() => setShowAd(false)} 
-        onComplete={handleAdComplete}
+        onClose={() => setShowAd(false)}
       />
     </div>
     </>
