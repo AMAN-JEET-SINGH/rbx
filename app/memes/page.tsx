@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import AdGoogle from "../components/AdGoogle";
 
 function ShareIcon({ className }: { className?: string }) {
   return (
@@ -108,7 +109,38 @@ export default function Meme() {
 
         {/* Memes List */}
         <div className="space-y-3">
-          {memes.map((meme) => (
+          {memes.slice(0, 2).map((meme) => (
+            <div
+              key={meme.id}
+              onClick={() => handleCardClick(meme.text, meme.id)}
+              className="bg-[#2a2a2a] rounded-xl p-5 flex items-center gap-4 cursor-pointer hover:opacity-95 transition-opacity"
+            >
+              {/* Title + Description (left) */}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-white font-bold text-xl mb-1">{meme.title}</h3>
+                <p className="text-white text-base">{meme.description}</p>
+              </div>
+
+              {/* Share icon (right) – in rounded square; shows check when copied */}
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                {copiedId === meme.id ? (
+                  <span className="text-green-400 text-xl">✓</span>
+                ) : (
+                  <ShareIcon />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Ad Component */}
+        <div className="mb-6 mt-6">
+          <AdGoogle slotId="8724045973" size="large" />
+        </div>
+
+        {/* Remaining Memes List */}
+        <div className="space-y-3">
+          {memes.slice(2).map((meme) => (
             <div
               key={meme.id}
               onClick={() => handleCardClick(meme.text, meme.id)}

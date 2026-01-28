@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useCoins } from "../contexts/CoinContext";
+import AdGoogle from "../components/AdGoogle";
 
 export default function Scratch() {
   const router = useRouter();
@@ -289,6 +290,11 @@ export default function Scratch() {
               </div>
             )}
           </div>
+        </div>
+
+        {/* Ad Component */}
+        <div className="mt-8 mb-6">
+          <AdGoogle slotId="8724045973" size="large" />
         </div>
       </div>
     </div>

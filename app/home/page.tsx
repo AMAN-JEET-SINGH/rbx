@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useCoins } from "../contexts/CoinContext";
 import AdModal from "../components/AdModal";
+import AdGoogle from "../components/AdGoogle";
 
 export default function Home() {
   const { coins } = useCoins();
@@ -97,7 +98,7 @@ export default function Home() {
         />
         </Link>
       </div>
-
+      <AdGoogle slotId="8724045973" size="large" />
       {/* Four Cards Grid */}
       <div className="w-full max-w-md px-1 mt-4">
         <div className="grid grid-cols-2 gap-3">

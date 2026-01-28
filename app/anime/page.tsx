@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import AdGoogle from "../components/AdGoogle";
 
 // Content: edit this array to add or change anime options. Image is /image/anime.avif; use `name` for the label.
 const animeOptions = [
@@ -43,7 +44,7 @@ export default function Anime() {
 
         {/* Anime list - vertical cards */}
         <div className="space-y-3">
-          {animeOptions.map((item, i) => (
+          {animeOptions.slice(0, 2).map((item, i) => (
             <Link key={item.id} href="/skin">
               <div className="flex items-center gap-3 rounded-xl bg-[#1a1a1f] px-4 py-3 cursor-pointer hover:opacity-90 transition-opacity mt-3">
                 <Image
@@ -54,6 +55,33 @@ export default function Anime() {
                   className="h-16 w-16 shrink-0 object-contain brightness-110 contrast-110 saturate-110"
                   unoptimized
                   priority={i < 2}
+                />
+                <span className="text-base font-bold text-white">
+                  {item.name}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Ad Component */}
+        <div className="my-6">
+          <AdGoogle slotId="8724045973" size="large" />
+        </div>
+
+        {/* Remaining Anime options */}
+        <div className="space-y-3">
+          {animeOptions.slice(2).map((item, i) => (
+            <Link key={item.id} href="/skin">
+              <div className="flex items-center gap-3 rounded-xl bg-[#1a1a1f] px-4 py-3 cursor-pointer hover:opacity-90 transition-opacity mt-3">
+                <Image
+                  src="/image/anime.avif"
+                  alt={item.name}
+                  width={64}
+                  height={64}
+                  className="h-16 w-16 shrink-0 object-contain brightness-110 contrast-110 saturate-110"
+                  unoptimized
+                  priority={false}
                 />
                 <span className="text-base font-bold text-white">
                   {item.name}

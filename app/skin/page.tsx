@@ -78,7 +78,7 @@ export default function Skin() {
 
         {/* AdGoogle after first two images */}
         <div className="mb-4">
-          <AdGoogle />
+          <AdGoogle slotId="8724045973" size="large" />
         </div>
 
         {/* Remaining rows: exactly 2 images per row */}

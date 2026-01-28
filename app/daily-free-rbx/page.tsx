@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import WaitingTimer from "../components/WaitingTimer";
+import AdGoogle from "../components/AdGoogle";
 
 export default function DailyFreeRbx() {
   const router = useRouter();
@@ -52,7 +53,7 @@ export default function DailyFreeRbx() {
 
         {/* Three Counter Cards */}
         <div className="space-y-3 mb-6">
-          {counterCards.map((card, i) => (
+          {counterCards.slice(0, 2).map((card, i) => (
             <div
               key={card.id}
               onClick={() => {
@@ -71,6 +72,36 @@ export default function DailyFreeRbx() {
                 unoptimized
                 priority={i < 2}
                 loading={i >= 2 ? "eager" : undefined}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Ad Section After Two Cards */}
+        <div className="mb-6">
+          <AdGoogle slotId="8724045973" size="large" />
+        </div>
+
+        {/* Third Counter Card */}
+        <div className="space-y-3 mb-6">
+          {counterCards.slice(2, 3).map((card, i) => (
+            <div
+              key={card.id}
+              onClick={() => {
+                setRedirectPath(card.href);
+                setShowTimer(true);
+              }}
+              className="relative overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition-opacity"
+            >
+              <Image 
+                src={card.image} 
+                alt={card.title} 
+                width={400} 
+                height={150}
+                className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
+                quality={100}
+                unoptimized
+                priority
               />
             </div>
           ))}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import AdGoogle from "../components/AdGoogle";
 
 export default function ObcRbxCounter() {
   const router = useRouter();
@@ -54,7 +55,7 @@ export default function ObcRbxCounter() {
             alt="Roblox Characters" 
             width={220} 
             height={220}
-            className="max-h-[200px] w-auto object-contain brightness-110 contrast-110 saturate-110"
+            className="max-h-[120px] w-auto object-contain brightness-110 contrast-110 saturate-110"
             quality={100}
             unoptimized
             priority
@@ -87,6 +88,11 @@ export default function ObcRbxCounter() {
             <div className="absolute inset-0 shine-animation"></div>
             <span className="relative z-10">Count Now</span>
           </button>
+        </div>
+
+        {/* Ad Component */}
+        <div className="mb-6">
+          <AdGoogle slotId="8724045973" size="large" />
         </div>
 
         {/* Result Display */}

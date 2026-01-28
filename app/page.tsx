@@ -1,20 +1,47 @@
 import Image from "next/image";
+import AdGoogle from "./components/AdGoogle";
+
+const shineStyle = `
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .shine-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 2s infinite;
+    border-radius: inherit;
+  }
+`;
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center font-sans">
+      <style>{shineStyle}</style>
       <main
-        className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-3 px-5 sm:items-start bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/image/intro-bg.avif')" }}
+        className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-3 px-5 sm:items-start bg-center bg-no-repeat overflow-hidden"
+        style={{ backgroundImage: "url('/image/intro-bg.avif')", backgroundSize: 'cover', backgroundAttachment: 'cover' }}
       >
-        <div className="flex flex-col items-center w-full">
-          <div className="flex items-center justify-center w-full">
-            <div className="w-full h-full">
-              <a href="\home">
-                <Image src="/image/intro.avif" alt="RBX Counter" width={1000} height={1000} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1000px" />
-              </a>
+        <div className="flex flex-col items-center w-full relative">
+          <AdGoogle slotId="8724045973" />
+          <div className="flex items-center justify-center w-full overflow-hidden">
+            <div className="w-full h-full overflow-hidden">
+              <Image src="/image/intro.avif" alt="RBX Counter" width={1000} height={1000} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1000px" />
             </div>
           </div>
+          <a href="\home" className="shine-button relative z-10 -mt-8 px-12 py-2 text-white font-bold text-lg rounded-xl shadow-lg transition-colors duration-200 overflow-hidden" style={{ background: "linear-gradient(180deg, #FC9C10 0%, #FB7807 100%)" }}>
+            TAP TO START
+          </a>
           
           <div className="w-full mt-8 space-y-6 text-gray-200">
             <h1 className="text-3xl font-bold text-center">RBX Counter & Fun Rewards – Your Ultimate Robux Calculator!</h1>

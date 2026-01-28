@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import AdGoogle from "../components/AdGoogle";
 
 export default function Daily() {
   const router = useRouter();
@@ -49,9 +50,9 @@ export default function Daily() {
           <h1 className="text-2xl font-bold text-white">Daily R$ Converter</h1>
         </div>
 
-        {/* Three Calculator Cards Grid */}
+        {/* Two Calculator Cards Grid */}
         <div className="grid grid-cols-2 gap-4 mb-6">
-          {calculatorCards.map((card, i) => (
+          {calculatorCards.slice(0, 2).map((card, i) => (
             <Link key={card.id} href={card.href}>
               <div className="">
                 {/* Card Image */}
@@ -66,6 +67,35 @@ export default function Daily() {
                     unoptimized
                     priority={i < 2}
                     loading={i >= 2 ? "eager" : undefined}
+                  />
+                
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Ad Section After Two Cards */}
+        <div className="mb-6">
+          <AdGoogle slotId="8724045973" size="large" />
+        </div>
+
+        {/* Third Card Below Ad */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {calculatorCards.slice(2, 3).map((card, i) => (
+            <Link key={card.id} href={card.href}>
+              <div className="">
+                {/* Card Image */}
+                <div className="flex justify-center mb-3">
+                  <Image 
+                    src={card.image} 
+                    alt={card.title} 
+                    width={120} 
+                    height={120}
+                    className="w-full h-auto object-contain brightness-110 contrast-110 saturate-110"
+                    quality={100}
+                    unoptimized
+                    priority
                   />
                 
                 </div>
